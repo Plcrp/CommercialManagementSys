@@ -1,26 +1,22 @@
 package Model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Cliente extends PID{
-    private ArrayList<Produto> produtosComprados;
     private Double totalGasto;
     private Date dataCadastro;
 
-    public Cliente(String name,
+    public Cliente(String nome,
                    String ID,
-                   Date birthDate,
-                   ArrayList<Produto> produtosComprados,
+                   Date DataNascimento,
                    Double totalGasto,
                    Date dataCadastro) {
-        super(name, ID, birthDate);
-        this.produtosComprados = produtosComprados;
+        super(nome, ID, DataNascimento);
         this.totalGasto = totalGasto;
         this.dataCadastro = dataCadastro;
     }
-    public Cliente(String name){
-        super(name);
+    public Cliente(String nome){
+        super(nome);
     }
 
     public Double getTotalGasto() {
@@ -37,14 +33,6 @@ public class Cliente extends PID{
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
-    }
-
-    public ArrayList<Produto> getProdutosComprados() {
-        return produtosComprados;
-    }
-
-    public void setProdutosComprados(ArrayList<Produto> produtosComprados) {
-        this.produtosComprados = produtosComprados;
     }
 
 }

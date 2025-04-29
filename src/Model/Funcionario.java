@@ -1,6 +1,5 @@
 package Model;
 
-import java.util.ArrayList;
 import java.util.Date;
 class Funcionario extends PID {
     private Date joiningDate;

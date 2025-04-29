@@ -1,4 +1,7 @@
 package Model;
 
-public class Cargo {
+public enum Cargo {
+    GERENTE,
+    SUPERVISOR
+    
 }

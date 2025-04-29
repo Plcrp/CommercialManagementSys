@@ -2,21 +2,21 @@ package Model;
 
 import java.util.Date;
 public class PID {
-    private String name;
+    private String nome;
     private String ID; //CPF ou CNPJ
-    private Date birthDate;
+    private Date DataNascimento;
 
-    public PID(String name, String ID, Date birthDate) {
-        this.name = name;
+    public PID(String nome, String ID, Date DataNascimento) {
+        this.nome = nome;
         this.ID = ID;
-        this.birthDate = birthDate;
+        this.DataNascimento = DataNascimento;
     }
-    public PID(String name){ //Construtor para testes
-        this.name = name;
+    public PID(String nome){ //Construtor para testes
+        this.nome = nome;
     }
 
-    public String getName() {return name;}
+    public String getNome() {return nome;}
     public String getID() {return ID;}
-    public Date getBirthDate() {return new Date(birthDate.getTime());}
+    public Date getDataNascimento() {return new Date(DataNascimento.getTime());}
 
 }

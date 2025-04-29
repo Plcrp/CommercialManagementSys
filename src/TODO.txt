@@ -1,5 +1,0 @@
-1. Métodos de validação
-2. Criar a lógica das classes/atributos Custom
-3. Deixar data de nascimento em PID em português
-4. Criar a lógica de Cargos e Tipos de Produto com persistência
-5. Adicionar um dicionário de produtos/quantidades em Fornecedor.
