@@ -1,7 +1,7 @@
 package Model;
 
 import java.util.Date;
-class Funcionario extends PID {
+public class Funcionario extends PID {
     private Date joiningDate;
     private Cargo cargo;
     private double salario; //Passível de modificação futura para LONG(mais precisão)

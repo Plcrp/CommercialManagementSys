@@ -5,8 +5,7 @@ import Repository.ClientesRepo;
 import View.*;
 
 public class ClienteController {
-    public static void run(){
-        Scanner sc = new Scanner(System.in);
+    public static void run(Scanner sc){
         ClientesRepo clienteRepo = new ClientesRepo();
         int opcao;
         boolean loop = true;
@@ -49,10 +48,10 @@ public class ClienteController {
                 clienteRepo.add(nome, cpf, nascimento, totalGasto, cadastro);
                     break;
                 case 3:
-                    System.out.println("Ainda não feito...");
-                    break;
-                case 4:
-                    System.out.println("Ainda não feito...");
+                    sc.nextLine();
+                    System.out.print("Digite o CPF do cliente a ser removido: ");
+                    String cpfRemover = sc.nextLine();
+                    clienteRepo.removerCliente(cpfRemover);
                     break;
                 default:
                     System.out.println("Código inválido, digite novamente...");

@@ -2,28 +2,25 @@ package Model;
 
 import java.util.Date;
 public class Produto {
-    private String name;
+    private String name; // :/
     private String ID;
     private double preco;
     private Date dataCadastro;
     private Date fabricacao;
     private Date vencimento;
-    private TipoProduto tipo;
 
     public Produto(String name,
                    String ID,
                    double preco,
                    Date dataCadastro,
                    Date fabricacao,
-                   Date vencimento,
-                   TipoProduto tipo) {
+                   Date vencimento) {
         this.name = name;
         this.ID = ID;
         this.preco = preco;
         this.dataCadastro = dataCadastro;
         this.fabricacao = fabricacao;
         this.vencimento = vencimento;
-        this.tipo = new TipoProduto();
     }
 
     public String getName() {
@@ -72,13 +69,5 @@ public class Produto {
 
     public void setVencimento(Date vencimento) {
         this.vencimento = vencimento;
-    }
-
-    public TipoProduto getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoProduto tipo) {
-        this.tipo = tipo;
     }
 }

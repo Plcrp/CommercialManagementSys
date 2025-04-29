@@ -14,7 +14,7 @@ import Model.Cliente;
 
 public class ClientesRepo{
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
-    public static final SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
+    public final SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     //NÃO ESTAVA FUNCIONANDO COM CAMINHO RELATIVO
     public static String path = "/home/policarpo/Documentos/CommercialManagementSys/Data/clientes.csv";
 
@@ -78,5 +78,40 @@ public class ClientesRepo{
         } catch (IOException | ParseException e) {
             System.out.println("Erro ao ler os clientes: " + e.getMessage());
         }
-    }   
+    }
+    
+    public boolean removerCliente(String cpf) {
+        read();
+        boolean removido = false;
+        
+        for (int i = 0; i < listaClientes.size(); i++) {
+            if (listaClientes.get(i).getID().equals(cpf)) {
+                listaClientes.remove(i);
+                removido = true;
+                break;
+            }
+        }
+        
+        if (removido) {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, false))) {
+                for (Cliente cliente : listaClientes) {
+                    String str = cliente.getNome() + "," + 
+                                cliente.getID() + "," + 
+                                formatoData.format(cliente.getDataNascimento()) + "," + 
+                                cliente.getTotalGasto() + "," +
+                                formatoData.format(cliente.getDataCadastro());
+                    bw.write(str);
+                    bw.newLine();
+                }
+                System.out.println("Cliente removido com sucesso!");
+                return true;
+            } catch (IOException e) {
+                System.out.println("Erro ao remover cliente: " + e.getMessage());
+                return false;
+            }
+        } else {
+            System.out.println("Cliente com CPF " + cpf + " não encontrado.");
+            return false;
+        }
+    }
 }

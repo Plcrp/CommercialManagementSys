@@ -1,11 +1,11 @@
 package View;
 
-public class ClienteView {
+public class EstoqueView {
     public static void show(){
         System.out.println("\n===== Sistema de Gerenciamento Comercial =====");
-        System.out.println("1. Listar Clientes Cadastrados");
-        System.out.println("2. Cadastrar Novo Cliente");
-        System.out.println("3. Excluir Cliente");
+        System.out.println("1. Listar Produtos e Quantidades");
+        System.out.println("2. Adicionar Produtos");
+        System.out.println("3. Remover Produto");
         System.out.println("0. Sair");
         System.out.println("==============================================");
     }
