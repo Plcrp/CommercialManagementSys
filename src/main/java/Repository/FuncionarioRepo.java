@@ -17,7 +17,7 @@ public class FuncionarioRepo {
     private ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
     public final SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     //NÃO ESTAVA FUNCIONANDO COM CAMINHO RELATIVO
-    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/Data/funcionarios.csv";
+    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/src/main/resources/Data/funcionarios.csv";
 
     public void imprimirFuncionarios() {
         if (listaFuncionarios.isEmpty()) {
@@ -46,7 +46,9 @@ public class FuncionarioRepo {
     }
 
     public void add(String nome, String cpf, Date nascimento, Date admissao, Cargo cargo, double salario) {
-        String str = nome + "," + 
+        cpf = cpf.replaceAll("[^0-9]", "");
+
+        String str = nome + "," +
                      cpf + "," + 
                      formatoData.format(nascimento) + "," + 
                      formatoData.format(admissao) + "," +

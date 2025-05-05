@@ -15,7 +15,7 @@ import Model.Produto;
 public class ProdutosRepo {
     private ArrayList<Produto> listaProdutos = new ArrayList<>();
     public final SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
-    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/Data/produtos.csv";
+    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/src/main/resources/Data/produtos.csv";
 
     public void imprimirProdutos() {
         if (listaProdutos.isEmpty()) {

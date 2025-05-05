@@ -16,7 +16,7 @@ public class ClientesRepo{
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
     public final SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     //NÃO ESTAVA FUNCIONANDO COM CAMINHO RELATIVO
-    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/Data/clientes.csv";
+    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/src/main/resources/Data/clientes.csv";
 
     public void imprimirClientes() {
         if (listaClientes.isEmpty()) {
@@ -44,7 +44,9 @@ public class ClientesRepo{
     }
 
     public void add(String nome, String cpf, Date nascimento, double totalGasto, Date cadastro) {
-        String str = nome + "," + 
+        cpf = cpf.replaceAll("[^0-9]", "");
+
+        String str = nome + "," +
         cpf + "," + 
         formatoData.format(nascimento) + "," + 
         totalGasto + "," +

@@ -1,5 +1,5 @@
 package Model;
 
 public interface Validavel {
-    boolean Validar();
+    boolean validar(String documento);
 }

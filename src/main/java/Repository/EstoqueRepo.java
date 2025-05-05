@@ -18,7 +18,7 @@ public class EstoqueRepo {
     private Map<Produto, Integer> estoque = new HashMap<>();
     private ProdutosRepo produtosRepo = new ProdutosRepo();
     public final SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
-    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/Data/estoque.csv";
+    public static String path = "/home/policarpo/Documentos/CommercialManagementSys/src/main/resources/Data/estoque.csv";
 
     public void imprimirEstoque() {
         if (estoque.isEmpty()) {
